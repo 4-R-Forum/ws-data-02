@@ -17,7 +17,7 @@ input.onButtonPressed(Button.B, function () {
 })
 let data_string = ""
 let tx_power = 0
-let period = 300000
+let period = 60000
 tx_power = 7
 radio.setTransmitPower(tx_power)
 radio.setGroup(1)
@@ -26,7 +26,7 @@ weatherbit.startWeatherMonitoring()
 weatherbit.startWindMonitoring()
 weatherbit.startRainMonitoring()
 loops.everyInterval(period, function () {
-    data_string = "" + convertToText(Math.round(weatherbit.temperature() / 100)) + "," + convertToText(Math.round(weatherbit.humidity() / 1024)) + "," + convertToText(Math.idiv(weatherbit.pressure(), 696)) + "," + convertToText(weatherbit.windSpeed()) + "," + weatherbit.windDirection()
+    data_string = "" + convertToText(Math.round(weatherbit.temperature() / 100)) + "," + convertToText(Math.round(weatherbit.humidity() / 1024)) + "," + convertToText(Math.idiv(weatherbit.pressure(), 25600)) + "," + convertToText(Math.trunc(weatherbit.windSpeed())) + "," + weatherbit.windDirection()
     radio.sendString(data_string)
     basic.showString(data_string)
     data_string = convertToText(weatherbit.rain())
