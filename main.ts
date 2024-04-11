@@ -31,7 +31,7 @@ loops.everyInterval(period, function () {
     data_string = "" + convertToText(Math.round(weatherbit.temperature() / 100)) + "," + convertToText(Math.round(weatherbit.humidity() / 1024)) + "," + convertToText(Math.idiv(weatherbit.pressure(), 25600)) + "," + convertToText(Math.trunc(weatherbit.windSpeed())) + "," + weatherbit.windDirection()
     radio.sendString(data_string)
     this_period += 1
-    if (this_period == p_per_day) {
+    if (this_period >= p_per_day) {
         data_string = convertToText(weatherbit.rain())
         radio.sendString(data_string)
         this_period = 0
