@@ -11,13 +11,9 @@ input.onButtonPressed(Button.B, function () {
     basic.showNumber(tx_power)
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    basic.showString("010")
+    // Desktop Test 0420
+    basic.showString("011")
 })
-/**
- * Build 010
- * 
- * Desktop test 0420
- */
 let data_string = ""
 let tx_power = 0
 let period = 10000
