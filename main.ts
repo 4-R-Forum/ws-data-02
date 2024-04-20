@@ -12,11 +12,11 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     // Field Test 0420
-    basic.showString("012")
+    basic.showString("013")
 })
 let data_string = ""
 let tx_power = 0
-let period = 10000
+let period = 300000
 tx_power = 7
 radio.setTransmitPower(tx_power)
 radio.setGroup(1)
